@@ -1,0 +1,80 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_sudoers: no
+configure_terminal: no
+configure_osx: yes
+
+dotfiles_repo: https://github.com/blimmer/dotfiles
+dotfiles_repo_accept_hostkey: no
+dotfiles_repo_local_destination: ~/.dotfiles
+dotfiles_files:
+  - .gitconfig
+  - .gitignore_global
+  - .osx
+  - .tmux.conf
+  - .zshrc
+
+homebrew_installed_packages:
+  - ack
+  - awscli
+  - blackbox
+  - coreutils
+  - curl
+  - ffmpeg
+  - git
+  - gpg
+  - gpg-agent
+  - highlight
+  - hub
+  - sqlite
+  - mas
+  - npm
+  - nvm
+  - openssl
+  - phantomjs
+  - pinentry
+  - ssh-copy-id
+  - rbenv
+  - readline
+  - ruby-build
+  - s3cmd
+  - tmux
+  - tree
+  - wget
+  - zsh
+
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - caskroom/fonts
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - dropbox
+  - firefox
+  - font-inconsolata-for-powerline
+  - google-chrome
+  - iterm2
+  - sequel-pro
+  - the-unarchiver
+  - virtualbox
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  - { id: 417375580, name: "BetterSnapTool (1.7)" }
+  - { id: 483350546, name: "Meme Generator (1.2)" }
+  - { id: 668208984, name: "GIPHY CAPTURE (2.4)" }
+  - { id: 425955336, name: "Skitch (2.8)" }
+  - { id: 411643860, name: "DaisyDisk (4.4)" }
+  - { id: 973134470, name: "Be Focused (1.6)" }
+  - { id: 497799835, name: "Xcode (8.2.1)" }
+  - { id: 410628904, name: "Wunderlist (3.4.6)" }
+  - { id: 447661441, name: "xScope (3.6.3)" }
+  - { id: 803453959, name: "Slack (2.5.1)" }
+  - { id: 430255202, name: "Mactracker (7.6.4)" }
+mas_email: ""
+mas_password: ""
