@@ -62,6 +62,7 @@ homebrew_cask_apps:
   - google-chrome
   - iterm2
   - sequel-pro
+  - spotify
   - the-unarchiver
   - virtualbox
 
@@ -80,3 +81,29 @@ homebrew_cask_apps:
 #   - { id: 430255202, name: "Mactracker (7.6.4)" }
 mas_email: ""
 mas_password: ""
+
+dockitems_disabled:
+  - all
+
+dockitems_enabled:
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 1
+  - name: Spotify
+    path: "/Applications/Spotify.app"
+    pos: 2
+  - name: Messages
+    path: "/Applications/Messages.app"
+    pos: 3
+  - name: Slack
+    path: "/Applications/Slack.app"
+    pos: 4
+  - name: Atom
+    path: "/Applications/Atom.app"
+    pos: 5
+  - name: Sequel Pro
+    path: "/Applications/Sequel Pro.app"
+    pos: 6
+  - name: iTerm
+    path: "/Applications/iTerm.app"
+    pos: 7

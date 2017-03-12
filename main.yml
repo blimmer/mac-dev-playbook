@@ -15,6 +15,7 @@
     - geerlingguy.dotfiles
     - name: geerlingguy.mas
       when: mas_installed_apps
+    - fubarhouse.macdock
 
   tasks:
     - include: tasks/ansible-setup.yml
