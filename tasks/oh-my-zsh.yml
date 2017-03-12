@@ -1,0 +1,14 @@
+---
+# oh-my-zsh
+
+- name: Check if oh-my-zsh is installed
+  stat: ~/.oh-my-zsh
+  register: oh_my_zsh_dir
+
+- name: Download oh-my-zsh installer
+  get_url: url=https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh dest=/tmp/oh-my-zsh-installer.sh
+  when: oh_my_zsh_dir.stat.exists == false
+
+- name: Execute oh-my-zsh installer
+  script: /tmp/oh-my-zsh-installer.sh
+  when: oh_my_zsh_dir.stat.exists == false
