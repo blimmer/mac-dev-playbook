@@ -66,17 +66,17 @@ homebrew_cask_apps:
   - virtualbox
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps:
-  - { id: 417375580, name: "BetterSnapTool (1.7)" }
-  - { id: 483350546, name: "Meme Generator (1.2)" }
-  - { id: 668208984, name: "GIPHY CAPTURE (2.4)" }
-  - { id: 425955336, name: "Skitch (2.8)" }
-  - { id: 411643860, name: "DaisyDisk (4.4)" }
-  - { id: 973134470, name: "Be Focused (1.6)" }
-  - { id: 497799835, name: "Xcode (8.2.1)" }
-  - { id: 410628904, name: "Wunderlist (3.4.6)" }
-  - { id: 447661441, name: "xScope (3.6.3)" }
-  - { id: 803453959, name: "Slack (2.5.1)" }
-  - { id: 430255202, name: "Mactracker (7.6.4)" }
+# mas_installed_apps:
+#   - { id: 417375580, name: "BetterSnapTool (1.7)" }
+#   - { id: 483350546, name: "Meme Generator (1.2)" }
+#   - { id: 668208984, name: "GIPHY CAPTURE (2.4)" }
+#   - { id: 425955336, name: "Skitch (2.8)" }
+#   - { id: 411643860, name: "DaisyDisk (4.4)" }
+#   - { id: 973134470, name: "Be Focused (1.6)" }
+#   - { id: 497799835, name: "Xcode (8.2.1)" }
+#   - { id: 410628904, name: "Wunderlist (3.4.6)" }
+#   - { id: 447661441, name: "xScope (3.6.3)" }
+#   - { id: 803453959, name: "Slack (2.5.1)" }
+#   - { id: 430255202, name: "Mactracker (7.6.4)" }
 mas_email: ""
 mas_password: ""
