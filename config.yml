@@ -83,8 +83,22 @@ homebrew_cask_apps:
 mas_email: ""
 mas_password: ""
 
-dockitems_disabled:
-  - all
+dockitems_to_remove:
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - System Preferences
+  - Calendar
 
 dockitems_enabled:
   - name: Google Chrome
