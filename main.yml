@@ -31,3 +31,6 @@
 
     - include: tasks/oh-my-zsh.yml
       when: configure_oh_my_zsh
+
+    - include: tasks/iterm.yml
+      when: configure_iterm

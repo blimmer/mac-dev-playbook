@@ -1,0 +1,10 @@
+---
+# iterm2
+
+- name: Place iterm2 preferences file
+  copy:
+    src: files/iterm2/configuration.plist
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+    mode: 0600
+    force: no
+  become: no
