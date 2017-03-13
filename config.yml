@@ -5,6 +5,7 @@ configure_sudoers: no
 configure_terminal: no
 configure_osx: yes
 configure_oh_my_zsh: yes
+configure_iterm: yes
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_accept_hostkey: no
