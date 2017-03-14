@@ -7,6 +7,11 @@
     - rbenv
     - ruby-build
 
+- name: Discover rbenv root
+  shell: $SHELL -lc "rbenv root"
+  register: rbenv_root
+  changed_when: no
+
 - name: Install Ruby version {{ global_rbenv_ruby_version }}
   shell: $SHELL -lc "rbenv install {{ global_rbenv_ruby_version }}"
   args:
@@ -18,5 +23,5 @@
     current_global_rbenv_ruby_version: "{{ lookup('file', {{ rbenv_root }}/version) }}"
 
 - name: Set global ruby version to {{ global_rbenv_ruby_version }}
-  shell: $SHELL -lc "rbenv global {{global_rbenv_ruby_version}}"
+  shell: $SHELL -lc "rbenv global {{ global_rbenv_ruby_version }}"
   when: global_rbenv_ruby_version is defined and current_global_rbenv_ruby_version != global_rbenv_ruby_version

@@ -11,7 +11,6 @@ iterm2_overwite_configuration: no
 
 configure_ruby: yes
 global_rbenv_ruby_version: 2.4.0
-rbenv_root: "~/.rbenv"
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_accept_hostkey: no
