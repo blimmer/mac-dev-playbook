@@ -59,7 +59,7 @@ homebrew_cask_apps:
   - atom
   - dropbox
   - firefox
-  - font-inconsolata-for-powerline
+  - font-menlo-for-powerline
   - google-chrome
   - iterm2
   - sequel-pro
