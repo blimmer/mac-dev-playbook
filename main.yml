@@ -32,3 +32,6 @@
 
     - include: tasks/iterm.yml
       when: configure_iterm
+
+    - include: tasks/ruby.yml
+      when: configure_ruby

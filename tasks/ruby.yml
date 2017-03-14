@@ -1,0 +1,15 @@
+---
+# ruby things
+
+- name: Ensure ruby homebrew packages are installed.
+  homebrew: "name={{ item }} state=present"
+  with_items:
+    - rbenv
+    - ruby-build
+
+- name: Install Ruby interpreters {{ rbenv_ruby_versions_dict.values() }}
+  shell: $SHELL -lc "rbenv install {{ item.value }}"
+  args:
+    creates: "{{ rbenv_root }}/versions/{{ item.value }}/bin/ruby"
+  with_dict: "{{ rbenv_ruby_versions_dict }}"
+  when: rbenv_ruby_versions is defined
