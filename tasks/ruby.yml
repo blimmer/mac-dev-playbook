@@ -7,9 +7,16 @@
     - rbenv
     - ruby-build
 
-- name: Install Ruby interpreters {{ rbenv_ruby_versions }}
-  shell: $SHELL -lc "rbenv install {{ item.value }}"
+- name: Install Ruby version {{ global_rbenv_ruby_version }}
+  shell: $SHELL -lc "rbenv install {{ global_rbenv_ruby_version }}"
   args:
-    creates: "{{ rbenv_root }}/versions/{{ item.value }}/bin/ruby"
-  with_dict: "{{ rbenv_ruby_versions }}"
-  when: rbenv_ruby_versions is defined
+    creates: "{{ rbenv_root }}/versions/{{ global_rbenv_ruby_version }}/bin/ruby"
+  when: global_rbenv_ruby_version is defined
+
+- name: Set fact for global ruby version
+  set_fact:
+    current_global_rbenv_ruby_version: "{{ lookup('file', {{ rbenv_root }}/version) }}"
+
+- name: Set global ruby version to {{ global_rbenv_ruby_version }}
+  shell: $SHELL -lc "rbenv global {{global_rbenv_ruby_version}}"
+  when: global_rbenv_ruby_version is defined and current_global_rbenv_ruby_version != global_rbenv_ruby_version
