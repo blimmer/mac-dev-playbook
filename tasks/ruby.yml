@@ -7,9 +7,9 @@
     - rbenv
     - ruby-build
 
-- name: Install Ruby interpreters {{ rbenv_ruby_versions_dict.values() }}
+- name: Install Ruby interpreters {{ rbenv_ruby_versions }}
   shell: $SHELL -lc "rbenv install {{ item.value }}"
   args:
     creates: "{{ rbenv_root }}/versions/{{ item.value }}/bin/ruby"
-  with_dict: "{{ rbenv_ruby_versions_dict }}"
+  with_dict: "{{ rbenv_ruby_versions }}"
   when: rbenv_ruby_versions is defined
