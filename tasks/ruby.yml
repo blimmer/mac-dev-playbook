@@ -7,10 +7,14 @@
     - rbenv
     - ruby-build
 
-- name: Discover rbenv root
+- name: Discover rbenv_root
   shell: $SHELL -lc "rbenv root"
-  register: rbenv_root
+  register: rbenv_root_command
   changed_when: no
+
+- name: Set rbenv_root fact
+  set_fact:
+    rbenv_root: rbenv_root_command['stdout']
 
 - name: Install Ruby version {{ global_rbenv_ruby_version }}
   shell: $SHELL -lc "rbenv install {{ global_rbenv_ruby_version }}"
