@@ -66,15 +66,18 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - 1password
   - aws-vault
   - docker
   - firefox-beta
   - font-menlo-for-powerline
   - google-chrome
   - graphiql
+  - istat-menus
   - iterm2
   - keepingyouawake
   - slack
+  - spectacle
   - spotify
   - the-unarchiver
   - virtualbox
