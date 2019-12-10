@@ -32,7 +32,6 @@ homebrew_installed_packages:
   - git
   - go
   - gpg
-  - gpg-agent
   - highlight
   - hub
   - jq
