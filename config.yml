@@ -35,6 +35,7 @@ homebrew_installed_packages:
   - gpg-agent
   - highlight
   - hub
+  - jq
   - kubernetes-cli
   - sqlite
   - mas
