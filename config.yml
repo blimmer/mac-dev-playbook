@@ -91,8 +91,10 @@ dockitems_to_remove:
   - Photos
   - Messages
   - FaceTime
-  - iTunes
-  - iBooks
+  - Music
+  - Podcasts
+  - TV
+  - News
   - App Store
   - System Preferences
   - Calendar
@@ -108,7 +110,7 @@ dockitems_enabled:
     path: "/Applications/Spotify.app"
     pos: 3
   - name: Messages
-    path: "/Applications/Messages.app"
+    path: "/System/Applications/Messages.app"
     pos: 4
   - name: Slack
     path: "/Applications/Slack.app"
