@@ -1,10 +1,12 @@
 ---
 downloads: ~/.ansible-downloads/
 
+configure_dock: yes
 configure_sudoers: no
 configure_terminal: no
 configure_osx: yes
 configure_oh_my_zsh: yes
+mas_installed_apps: no
 
 configure_iterm: yes
 iterm2_overwite_configuration: no
