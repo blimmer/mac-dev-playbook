@@ -24,54 +24,63 @@ dotfiles_files:
 homebrew_installed_packages:
   - ack
   - awscli
-  - blackbox
+  - bats
   - coreutils
   - curl
+  - diff-so-fancy
   - ffmpeg
   - git
+  - go
   - gpg
   - gpg-agent
   - highlight
   - hub
+  - kubernetes-cli
   - sqlite
   - mas
+  - minikube
   - npm
   - nvm
   - openssl
-  - phantomjs
   - pinentry
+  - python
+  - python3
   - ssh-copy-id
   - rbenv
   - readline
   - ruby-build
   - s3cmd
   - the_silver_searcher
+  - tldr
   - tmux
   - tree
+  - vim
   - wget
   - zsh
 
 homebrew_taps:
   - homebrew/core
-  - caskroom/cask
-  - caskroom/fonts
-  - homebrew/binary
-  - homebrew/dupes
-  - homebrew/versions
+  - homebrew/cask
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
+  - homebrew/services
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - atom
-  - dropbox
-  - firefox
+  - aws-vault
+  - docker
+  - firefox-beta
   - font-menlo-for-powerline
   - google-chrome
+  - graphiql
   - iterm2
-  - sequel-pro
+  - keepingyouawake
+  - minikube
   - slack
   - spotify
   - the-unarchiver
   - virtualbox
+  - virtualbox-extension-pack
 
 dockitems_to_remove:
   - Launchpad
@@ -91,24 +100,21 @@ dockitems_to_remove:
   - Calendar
 
 dockitems_enabled:
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+    pos: 1
   - name: Google Chrome
     path: "/Applications/Google Chrome.app"
-    pos: 1
+    pos: 2
   - name: Spotify
     path: "/Applications/Spotify.app"
-    pos: 2
+    pos: 3
   - name: Messages
     path: "/Applications/Messages.app"
-    pos: 3
+    pos: 4
   - name: Slack
     path: "/Applications/Slack.app"
-    pos: 4
-  - name: Atom
-    path: "/Applications/Atom.app"
     pos: 5
-  - name: Sequel Pro
-    path: "/Applications/Sequel Pro.app"
-    pos: 6
   - name: iTerm
     path: "/Applications/iTerm.app"
-    pos: 7
+    pos: 6
