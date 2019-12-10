@@ -75,7 +75,6 @@ homebrew_cask_apps:
   - graphiql
   - iterm2
   - keepingyouawake
-  - minikube
   - slack
   - spotify
   - the-unarchiver
