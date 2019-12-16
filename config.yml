@@ -27,7 +27,6 @@ homebrew_installed_packages:
   - coreutils
   - curl
   - diff-so-fancy
-  - ffmpeg
   - git
   - go
   - gpg
@@ -79,9 +78,7 @@ homebrew_cask_apps:
   - slack
   - spectacle
   - spotify
-  - the-unarchiver
-  - virtualbox
-  - virtualbox-extension-pack
+  - visual-studio-code
 
 dockitems_to_remove:
   - Launchpad
