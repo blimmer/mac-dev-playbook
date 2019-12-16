@@ -8,7 +8,6 @@ configure_osx: yes
 configure_oh_my_zsh: yes
 
 configure_iterm: yes
-iterm2_overwite_configuration: no
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_accept_hostkey: no
@@ -32,6 +31,7 @@ homebrew_installed_packages:
   - gpg
   - highlight
   - hub
+  - jenv
   - jq
   - kubernetes-cli
   - sqlite

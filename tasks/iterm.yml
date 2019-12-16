@@ -1,11 +1,17 @@
 ---
 # iterm2
 
-- name: Place iterm2 preferences file
-  copy:
-    src: files/iterm2/configuration.plist
-    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
-    mode: 0600
-    force: yes
-  become: no
-  when: iterm2_overwite_configuration
+- name: Set dotfiles repo as preferences folder
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: PrefsCustomFolder
+    type: string
+    value: "~/.dotfiles"
+
+- name: Load iTerm settings from dotfiles folder
+  osx_defaults:
+    domain: com.googlecode.iterm2
+    key: LoadPrefsFromCustomFolder
+    type: boolean
+    value: "true"
+
