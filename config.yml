@@ -38,7 +38,6 @@ homebrew_installed_packages:
   - mas
   - minikube
   - npm
-  - nvm
   - openssl
   - pinentry
   - python
