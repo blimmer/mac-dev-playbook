@@ -38,7 +38,6 @@ homebrew_installed_packages:
   - mas
   - minikube
   - npm
-  - nvm
   - openssl
   - pinentry
   - python
@@ -55,6 +54,9 @@ homebrew_installed_packages:
   - vim
   - wget
   - zsh
+
+homebrew_uninstalled_packages:
+  - nvm # NVM does not support homebrew installs
 
 homebrew_taps:
   - homebrew/core
