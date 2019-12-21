@@ -55,6 +55,9 @@ homebrew_installed_packages:
   - wget
   - zsh
 
+homebrew_uninstalled_packages:
+  - nvm # NVM does not support homebrew installs
+
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
