@@ -13,14 +13,17 @@ dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_accept_hostkey: no
 dotfiles_repo_local_destination: ~/.dotfiles
 dotfiles_files:
+  - .asdfrc
   - .gitconfig
   - .gitignore_global
   - .osx
+  - .tool-versions
   - .tmux.conf
   - .zshrc
 
 homebrew_installed_packages:
   - ack
+  - asdf
   - awscli
   - bats
   - coreutils
@@ -31,7 +34,6 @@ homebrew_installed_packages:
   - gpg
   - highlight
   - hub
-  - jenv
   - jq
   - kubernetes-cli
   - sqlite
@@ -40,12 +42,9 @@ homebrew_installed_packages:
   - npm
   - openssl
   - pinentry
-  - python
   - python3
   - ssh-copy-id
-  - rbenv
   - readline
-  - ruby-build
   - s3cmd
   - the_silver_searcher
   - tldr
@@ -54,9 +53,6 @@ homebrew_installed_packages:
   - vim
   - wget
   - zsh
-
-homebrew_uninstalled_packages:
-  - nvm # NVM does not support homebrew installs
 
 homebrew_taps:
   - homebrew/core

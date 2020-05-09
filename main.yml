@@ -43,8 +43,6 @@
     - include: tasks/iterm.yml
       when: configure_iterm
 
-    - include: tasks/nvm.yml
-
     - include_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
