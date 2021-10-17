@@ -21,11 +21,7 @@
     - role: geerlingguy.mac.mas
       when: mas_installed_apps or mas_installed_app_ids
       tags: ['mas']
-<<<<<<< HEAD
-    - role: fubarhouse.macdock
-=======
     - role: geerlingguy.mac.dock
->>>>>>> ce79f51bbb6bdea097e315a96b6d48cfff2ffe3e
       when: configure_dock
       tags: ['dock']
 
@@ -42,17 +38,13 @@
       when: configure_osx
       tags: ['osx']
 
-<<<<<<< HEAD
     - include: tasks/oh-my-zsh.yml
       when: configure_oh_my_zsh
 
     - include: tasks/iterm.yml
       when: configure_iterm
 
-    - include_tasks: tasks/extra-packages.yml
-=======
     - import_tasks: tasks/extra-packages.yml
->>>>>>> ce79f51bbb6bdea097e315a96b6d48cfff2ffe3e
       tags: ['extra-packages']
 
     - import_tasks: tasks/sublime-text.yml
