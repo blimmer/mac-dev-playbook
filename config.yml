@@ -26,7 +26,6 @@ homebrew_installed_packages:
   - awscli
   - coreutils
   - curl
-  - diff-so-fancy
   - ffmpeg
   - git
   - go
