@@ -32,7 +32,6 @@ homebrew_installed_packages:
   - gpg
   - hadolint
   - highlight
-  - hub
   - jq
   - sqlite
   - openssl
