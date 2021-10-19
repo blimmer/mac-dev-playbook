@@ -75,6 +75,7 @@ homebrew_cask_apps:
   - rectangle
   - slack
   - spotify
+  - stretchly
   - visual-studio-code
 
 dockitems_remove:
