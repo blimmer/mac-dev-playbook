@@ -2,7 +2,6 @@
 downloads: ~/.ansible-downloads/
 
 configure_dock: yes
-configure_sudoers: no
 configure_terminal: no
 configure_osx: yes
 configure_oh_my_zsh: yes
@@ -25,33 +24,32 @@ homebrew_installed_packages:
   - ack
   - asdf
   - awscli
-  - bats
   - coreutils
   - curl
-  - diff-so-fancy
+  - ffmpeg
   - git
   - go
   - gpg
+  - hadolint
   - highlight
-  - hub
   - jq
-  - kubernetes-cli
   - sqlite
-  - mas
-  - minikube
-  - npm
   - openssl
   - pinentry
   - python3
   - ssh-copy-id
   - readline
+  - ruby-build
   - s3cmd
+  - saml2aws
+  - tfenv
   - the_silver_searcher
   - tldr
   - tmux
   - tree
   - vim
   - wget
+  - yarn
   - zsh
 
 homebrew_taps:
@@ -74,12 +72,12 @@ homebrew_cask_apps:
   - istat-menus
   - iterm2
   - keepingyouawake
+  - rectangle
   - slack
-  - spectacle
   - spotify
   - visual-studio-code
 
-dockitems_to_remove:
+dockitems_remove:
   - Launchpad
   - Mail
   - Safari
@@ -98,7 +96,7 @@ dockitems_to_remove:
   - System Preferences
   - Calendar
 
-dockitems_enabled:
+dockitems_persist:
   - name: Firefox
     path: "/Applications/Firefox.app"
     pos: 1
