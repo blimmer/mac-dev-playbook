@@ -1,15 +1,15 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dock: yes
-configure_terminal: no
-configure_osx: yes
-configure_oh_my_zsh: yes
+configure_dock: true
+configure_terminal: false
+configure_osx: true
+configure_oh_my_zsh: true
 
-configure_iterm: yes
+configure_iterm: true
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
-dotfiles_repo_accept_hostkey: no
+dotfiles_repo_accept_hostkey: false
 dotfiles_repo_local_destination: ~/.dotfiles
 dotfiles_files:
   - .asdfrc
