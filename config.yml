@@ -17,13 +17,13 @@ dotfiles_files:
   - .gitignore_global
   - .osx
   - .tool-versions
-  - .tmux.conf
   - .zshrc
 
 homebrew_installed_packages:
   - ack
   - asdf
   - awscli
+  - bat
   - coreutils
   - curl
   - ffmpeg
@@ -45,7 +45,6 @@ homebrew_installed_packages:
   - tfenv
   - the_silver_searcher
   - tldr
-  - tmux
   - tree
   - vim
   - wget
