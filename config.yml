@@ -79,6 +79,7 @@ homebrew_cask_apps:
   - spotify
   - stretchly
   - visual-studio-code
+  - zoom
 
 dockitems_remove:
   - Launchpad
