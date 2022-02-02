@@ -38,6 +38,7 @@ homebrew_installed_packages:
   - openssl
   - pinentry
   - python3
+  - shellcheck
   - ssh-copy-id
   - readline
   - ruby-build
