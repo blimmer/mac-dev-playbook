@@ -54,7 +54,6 @@ homebrew_installed_packages:
   - zsh
 
 homebrew_taps:
-  - homebrew/cask-fonts
   - homebrew/services
 
 homebrew_cask_appdir: /Applications
