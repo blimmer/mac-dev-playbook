@@ -54,10 +54,7 @@ homebrew_installed_packages:
   - zsh
 
 homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
   - homebrew/cask-fonts
-  - homebrew/cask-versions
   - homebrew/services
 
 homebrew_cask_appdir: /Applications
@@ -68,9 +65,8 @@ homebrew_cask_apps:
   - firefox-beta
   - font-menlo-for-powerline
   - google-chrome
-  - graphiql
   - imageoptim
-  - istat-menus
+  - istat-menus@6
   - iterm2
   - keepingyouawake
   - obsidian
@@ -106,17 +102,17 @@ dockitems_persist:
   - name: Firefox
     path: "/Applications/Firefox.app"
     pos: 1
-  - name: Google Chrome
-    path: "/Applications/Google Chrome.app"
-    pos: 2
-  - name: Spotify
-    path: "/Applications/Spotify.app"
-    pos: 3
   - name: Messages
     path: "/System/Applications/Messages.app"
-    pos: 4
+    pos: 2
+  - name: Visual Studio Code
+    path: "/Applications/Visual Studio Code.app"
+    pos: 3
   - name: Slack
     path: "/Applications/Slack.app"
+    pos: 4
+  - name: Spotify
+    path: "/Applications/Spotify.app"
     pos: 5
   - name: iTerm
     path: "/Applications/iTerm.app"
