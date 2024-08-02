@@ -61,7 +61,7 @@ homebrew_cask_apps:
   - 1password
   - aws-vault
   - docker
-  - firefox-beta
+  - firefox@beta
   - font-menlo-for-powerline
   - google-chrome
   - imageoptim
