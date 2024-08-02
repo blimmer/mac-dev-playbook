@@ -34,23 +34,18 @@ homebrew_installed_packages:
   - hadolint
   - highlight
   - jq
-  - sqlite
   - openssl
-  - pinentry
   - python3
   - shellcheck
   - ssh-copy-id
   - readline
   - ruby-build
-  - s3cmd
-  - saml2aws
   - tfenv
   - the_silver_searcher
   - tldr
   - tree
   - vim
   - wget
-  - yarn
   - zsh
 
 homebrew_taps:
