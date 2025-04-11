@@ -7,6 +7,7 @@ configure_osx: true
 configure_oh_my_zsh: true
 
 configure_iterm: true
+configure_asdf: true
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_version: main
@@ -72,6 +73,14 @@ homebrew_cask_apps:
   - stretchly
   - visual-studio-code
   - zoom
+
+asdf_plugins:
+  - nodejs
+  - ruby
+  - terraform
+  - bun
+  - python
+  - just
 
 dockitems_remove:
   - Launchpad
