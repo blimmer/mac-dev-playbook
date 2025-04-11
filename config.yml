@@ -48,8 +48,7 @@ homebrew_installed_packages:
   - wget
   - zsh
 
-homebrew_taps:
-  - homebrew/services
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
