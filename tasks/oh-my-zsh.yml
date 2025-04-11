@@ -7,12 +7,6 @@
     dest: ~/.oh-my-zsh
     update: false
 
-- name: Clone zsh-autosuggestions repo
-  git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions.git
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    update: false
-
 - name: Change default shell to zsh
   user:
     name: "{{ansible_user_id}}"

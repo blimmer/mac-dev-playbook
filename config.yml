@@ -55,12 +55,14 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - aws-vault
+  - chatgpt
+  - cursor
   - docker
   - firefox@beta
   - font-menlo-for-powerline
   - google-chrome
   - imageoptim
-  - istat-menus@6
+  - istat-menus
   - iterm2
   - keepingyouawake
   - obsidian
@@ -98,8 +100,8 @@ dockitems_persist:
   - name: Messages
     path: "/System/Applications/Messages.app"
     pos: 2
-  - name: Visual Studio Code
-    path: "/Applications/Visual Studio Code.app"
+  - name: Cursor
+    path: "/Applications/Cursor.app"
     pos: 3
   - name: Slack
     path: "/Applications/Slack.app"
@@ -107,6 +109,9 @@ dockitems_persist:
   - name: Spotify
     path: "/Applications/Spotify.app"
     pos: 5
+  - name: ChatGPT
+    path: "/Applications/ChatGPT.app"
+    pos: 6
   - name: iTerm
     path: "/Applications/iTerm.app"
-    pos: 6
+    pos: 7
