@@ -39,14 +39,17 @@
       when: configure_osx
       tags: ['osx']
 
-    - include: tasks/oh-my-zsh.yml
+    - import_tasks: tasks/oh-my-zsh.yml
       when: configure_oh_my_zsh
 
-    - include: tasks/iterm.yml
+    - import_tasks: tasks/iterm.yml
       when: configure_iterm
 
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
+
+    - import_tasks: tasks/asdf.yml
+      when: configure_asdf
 
     - import_tasks: tasks/sublime-text.yml
       when: configure_sublime

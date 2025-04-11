@@ -7,6 +7,7 @@ configure_osx: true
 configure_oh_my_zsh: true
 
 configure_iterm: true
+configure_asdf: true
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_version: main
@@ -48,8 +49,7 @@ homebrew_installed_packages:
   - wget
   - zsh
 
-homebrew_taps:
-  - homebrew/services
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -74,6 +74,14 @@ homebrew_cask_apps:
   - visual-studio-code
   - zoom
 
+asdf_plugins:
+  - nodejs
+  - ruby
+  - terraform
+  - bun
+  - python
+  - just
+
 dockitems_remove:
   - Launchpad
   - Mail
@@ -92,6 +100,7 @@ dockitems_remove:
   - App Store
   - System Preferences
   - Calendar
+  - Freeform
 
 dockitems_persist:
   - name: Firefox
