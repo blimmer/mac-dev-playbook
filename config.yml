@@ -100,6 +100,7 @@ dockitems_remove:
   - App Store
   - System Preferences
   - Calendar
+  - Freeform
 
 dockitems_persist:
   - name: Firefox
