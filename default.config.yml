@@ -5,6 +5,8 @@ configure_osx: true
 configure_oh_my_zsh: false
 configure_iterm: false
 configure_asdf: false
+configure_claude: false
+uv_tools: []
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false

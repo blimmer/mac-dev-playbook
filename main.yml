@@ -51,6 +51,10 @@
     - import_tasks: tasks/asdf.yml
       when: configure_asdf
 
+    - import_tasks: tasks/claude.yml
+      when: configure_claude
+      tags: ['claude']
+
     - import_tasks: tasks/sublime-text.yml
       when: configure_sublime
       tags: ['sublime-text']

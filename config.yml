@@ -8,6 +8,14 @@ configure_oh_my_zsh: true
 
 configure_iterm: true
 configure_asdf: true
+configure_claude: true
+
+claude_config_repo: git@github.com:blimmer/claude-config.git
+claude_config_repo_version: main
+claude_config_local_destination: ~/.claude
+
+uv_tools:
+  - nah
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_version: main
