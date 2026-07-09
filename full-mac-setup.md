@@ -41,12 +41,14 @@ place.
 1. Re-run the private portion of the playbook:
 
    ```sh
-   ansible-playbook main.yml --tags claude
+   ansible-playbook main.yml --tags claude,repos
    ```
 
    This clones the private [claude-config](https://github.com/blimmer/claude-config)
-   repo into `~/.claude` (settings, hooks, agents, skills, statusline) and
-   installs the uv-managed tools the hooks depend on (`nah`).
+   repo into `~/.claude` (settings, hooks, agents, skills, statusline),
+   installs the uv-managed tools the hooks depend on (`nah`), and clones
+   the day-one personal repos (`notes`, `scripts`, `backup`) into
+   `~/code`.
 
 2. Only now launch Claude Code and sign in. The hooks in `settings.json`
    call `~/.local/bin/nah` on nearly every tool event, so launching before

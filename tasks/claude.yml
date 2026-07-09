@@ -1,32 +1,10 @@
 ---
-- name: Check GitHub SSH authentication.
-  ansible.builtin.command: >-
-    ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new
-    -T git@github.com
-  register: github_ssh_check
-  changed_when: false
-  failed_when: false
-
-- name: Determine whether GitHub SSH access is available.
-  ansible.builtin.set_fact:
-    github_ssh_available: >-
-      {{ 'successfully authenticated' in
-         (github_ssh_check.stdout + github_ssh_check.stderr) }}
-
-- name: Warn when GitHub SSH access is unavailable.
-  ansible.builtin.debug:
-    msg: >-
-      GitHub SSH authentication is not available, so the private Claude
-      config repo was not cloned. Sign in to 1Password, enable its SSH
-      agent, then re-run with: ansible-playbook main.yml --tags claude
-  when: not github_ssh_available
-
 - name: Ensure the Claude config directory exists.
   ansible.builtin.file:
     path: "{{ claude_config_local_destination }}"
     state: directory
     mode: "0755"
-  when: github_ssh_available
+  when: github_ssh_available | default(false)
 
 # Adopts the repo even if Claude Code already created files in the
 # directory, where a plain `git clone` would refuse to run.
@@ -41,7 +19,7 @@
   args:
     chdir: "{{ claude_config_local_destination }}"
     creates: "{{ claude_config_local_destination }}/.git"
-  when: github_ssh_available
+  when: github_ssh_available | default(false)
 
 - name: Install uv-managed tools.
   ansible.builtin.command: "uv tool install {{ item }}"

@@ -1,0 +1,22 @@
+---
+- name: Check GitHub SSH authentication.
+  ansible.builtin.command: >-
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=accept-new
+    -T git@github.com
+  register: github_ssh_check
+  changed_when: false
+  failed_when: false
+
+- name: Determine whether GitHub SSH access is available.
+  ansible.builtin.set_fact:
+    github_ssh_available: >-
+      {{ 'successfully authenticated' in
+         (github_ssh_check.stdout + github_ssh_check.stderr) }}
+
+- name: Warn when GitHub SSH access is unavailable.
+  ansible.builtin.debug:
+    msg: >-
+      GitHub SSH authentication is not available, so private repos were
+      not cloned. Sign in to 1Password, enable its SSH agent, then re-run
+      with: ansible-playbook main.yml --tags claude,repos
+  when: not github_ssh_available
