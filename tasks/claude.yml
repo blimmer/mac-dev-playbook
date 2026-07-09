@@ -1,0 +1,28 @@
+---
+- name: Ensure the Claude config directory exists.
+  ansible.builtin.file:
+    path: "{{ claude_config_local_destination }}"
+    state: directory
+    mode: "0755"
+  when: github_ssh_available | default(false)
+
+# Adopts the repo even if Claude Code already created files in the
+# directory, where a plain `git clone` would refuse to run.
+- name: Clone the Claude config repo into the config directory.
+  ansible.builtin.shell: |
+    set -e
+    git init
+    git remote add origin {{ claude_config_repo }}
+    git fetch origin {{ claude_config_repo_version }}
+    git checkout -f -B {{ claude_config_repo_version }} \
+      origin/{{ claude_config_repo_version }}
+  args:
+    chdir: "{{ claude_config_local_destination }}"
+    creates: "{{ claude_config_local_destination }}/.git"
+  when: github_ssh_available | default(false)
+
+- name: Install uv-managed tools.
+  ansible.builtin.command: "uv tool install {{ item }}"
+  args:
+    creates: "{{ ansible_env.HOME }}/.local/bin/{{ item }}"
+  loop: "{{ uv_tools }}"

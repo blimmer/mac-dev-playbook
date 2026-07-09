@@ -8,6 +8,21 @@ configure_oh_my_zsh: true
 
 configure_iterm: true
 configure_asdf: true
+configure_claude: true
+
+claude_config_repo: git@github.com:blimmer/claude-config.git
+claude_config_repo_version: main
+claude_config_local_destination: ~/.claude
+
+uv_tools:
+  - nah
+
+configure_repos: true
+personal_repos_destination: ~/code
+personal_repos:
+  - git@github.com:blimmer/notes.git
+  - git@github.com:blimmer/scripts.git
+  - git@github.com:blimmer/backup.git
 
 dotfiles_repo: https://github.com/blimmer/dotfiles
 dotfiles_repo_version: main
@@ -17,61 +32,110 @@ dotfiles_files:
   - .asdfrc
   - .gitconfig
   - .gitignore_global
-  - .osx
   - .tool-versions
   - .zshrc
 
 homebrew_installed_packages:
   - ack
+  - actionlint
   - asdf
   - awscli
+  - bash
   - bat
+  - bats-core
+  - circleci
+  - contextbridge/tap/aether
   - coreutils
   - curl
+  - fd
   - ffmpeg
+  - findutils
+  - gemini-cli
+  - gh
   - git
+  - git-crypt
+  - git-lfs
+  - gitleaks
+  - gitui
   - go
   - gpg
   - hadolint
   - highlight
+  - hyperfine
+  - imagemagick
+  - jj
   - jq
+  - lefthook
+  - make
+  - mermaid-cli
+  - mkcert
+  - ocrmypdf
   - openssl
+  - pandoc
+  - pinact
+  - pipx
+  - pngcrush
+  - pre-commit
   - python3
+  - rclone
+  - readline
+  - rsync
+  - ruby-build
+  - s3cmd
+  - sccache
   - shellcheck
   - ssh-copy-id
-  - readline
-  - ruby-build
   - tfenv
   - the_silver_searcher
-  - tldr
+  - tlrc
   - tree
+  - typescript-language-server
+  - typos-cli
+  - uv
   - vim
   - wget
+  - yamllint
+  - yq
+  - zizmor
   - zsh
 
-homebrew_taps: []
+homebrew_taps:
+  - contextbridge/tap
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
-  - aws-vault
+  - 1password-cli
+  - antigravity-cli
+  - aws-vault-binary
+  - brave-browser
   - chatgpt
+  - claude
+  - codex
+  - contextbridge/tap/cli@alpha
   - cursor
-  - docker
+  - docker-desktop
   - firefox@beta
   - font-menlo-for-powerline
+  - gcloud-cli
+  - github
   - google-chrome
   - imageoptim
   - istat-menus
   - iterm2
   - keepingyouawake
+  - logi-options+
+  - loom
+  - netnewswire
   - obsidian
   - pastebot
   - rectangle
+  - session-manager-plugin
   - slack
   - spotify
-  - stretchly
-  - visual-studio-code
+  - tailscale-app
+  - warp
+  - zed
   - zoom
 
 asdf_plugins:
@@ -81,6 +145,205 @@ asdf_plugins:
   - bun
   - python
   - just
+
+# General UI/UX
+macos_defaults:
+  - domain: NSGlobalDomain
+    key: NSNavPanelExpandedStateForSaveMode
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: PMPrintingExpandedStateForPrint
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: NSDocumentSaveNewDocumentsToCloud
+    type: bool
+    value: false
+  - domain: com.apple.print.PrintingPrefs
+    key: Quit When Finished
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: NSAutomaticPeriodSubstitutionEnabled
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: com.apple.sound.uiaudio.enabled
+    type: int
+    value: 0
+  - domain: NSGlobalDomain
+    key: AppleICUForce24HourTime
+    type: bool
+    value: true
+  - domain: com.apple.menuextra.clock
+    key: DateFormat
+    type: string
+    value: "EEE MMM d  H:mm"
+  - domain: com.apple.menuextra.clock
+    key: ShowAMPM
+    type: bool
+    value: false
+  # Trackpad, keyboard, and input
+  - domain: NSGlobalDomain
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: int
+    value: 20
+  - domain: NSGlobalDomain
+    key: KeyRepeat
+    type: int
+    value: 1
+  - domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+  - domain: com.apple.AppleMultitouchTrackpad
+    key: Clicking
+    type: int
+    value: 1
+  - domain: NSGlobalDomain
+    key: com.apple.mouse.tapBehavior
+    type: int
+    value: 1
+    host: currentHost
+  - domain: NSGlobalDomain
+    key: com.apple.mouse.tapBehavior
+    type: int
+    value: 1
+  # Screenshots
+  - domain: com.apple.screencapture
+    key: location
+    type: string
+    value: "{{ ansible_env.HOME }}/screenshots"
+  - domain: com.apple.screencapture
+    key: show-thumbnail
+    type: bool
+    value: false
+  - domain: com.apple.screencapture
+    key: type
+    type: string
+    value: png
+  - domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+  # Finder
+  - domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: PfDe
+  - domain: com.apple.finder
+    key: NewWindowTargetPath
+    type: string
+    value: "file://{{ ansible_env.HOME }}/Desktop/"
+  - domain: com.apple.finder
+    key: ShowExternalHardDrivesOnDesktop
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: ShowMountedServersOnDesktop
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: ShowRemovableMediaOnDesktop
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: _FXShowPosixPathInTitle
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: FXDefaultSearchScope
+    type: string
+    value: SCcf
+  - domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: com.apple.springing.enabled
+    type: bool
+    value: true
+  - domain: NSGlobalDomain
+    key: com.apple.springing.delay
+    type: float
+    value: 0.1
+  - domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    type: bool
+    value: true
+  - domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: clmv
+  # Dock and hot corners
+  - domain: com.apple.dock
+    key: tilesize
+    type: float
+    value: 30
+  - domain: com.apple.dock
+    key: expose-animation-duration
+    type: float
+    value: 0.15
+  - domain: com.apple.dock
+    key: showhidden
+    type: bool
+    value: true
+  - domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+  # Bottom-left hot corner starts the screensaver
+  - domain: com.apple.dock
+    key: wvous-bl-corner
+    type: int
+    value: 5
+  - domain: com.apple.dock
+    key: wvous-bl-modifier
+    type: int
+    value: 0
+  # Don't show desktop when clicking the wallpaper (macOS 14+)
+  - domain: com.apple.WindowManager
+    key: EnableStandardClickToShowDesktop
+    type: bool
+    value: false
+  # Activity Monitor
+  - domain: com.apple.ActivityMonitor
+    key: OpenMainWindow
+    type: bool
+    value: true
+  - domain: com.apple.ActivityMonitor
+    key: ShowCategory
+    type: int
+    value: 0
 
 dockitems_remove:
   - Launchpad
@@ -109,8 +372,8 @@ dockitems_persist:
   - name: Messages
     path: "/System/Applications/Messages.app"
     pos: 2
-  - name: Cursor
-    path: "/Applications/Cursor.app"
+  - name: Zed
+    path: "/Applications/Zed.app"
     pos: 3
   - name: Slack
     path: "/Applications/Slack.app"
@@ -118,9 +381,18 @@ dockitems_persist:
   - name: Spotify
     path: "/Applications/Spotify.app"
     pos: 5
+  - name: NetNewsWire
+    path: "/Applications/NetNewsWire.app"
+    pos: 6
+  - name: Claude
+    path: "/Applications/Claude.app"
+    pos: 7
   - name: ChatGPT
     path: "/Applications/ChatGPT.app"
-    pos: 6
+    pos: 8
+  - name: Warp
+    path: "/Applications/Warp.app"
+    pos: 9
   - name: iTerm
     path: "/Applications/iTerm.app"
-    pos: 7
+    pos: 10

@@ -1,0 +1,20 @@
+---
+- name: Ensure the code directory exists.
+  ansible.builtin.file:
+    path: "{{ personal_repos_destination }}"
+    state: directory
+    mode: "0755"
+  when: github_ssh_available | default(false)
+
+# update: false so existing checkouts are never touched on re-runs.
+- name: Clone personal repos.
+  ansible.builtin.git:
+    repo: "{{ item }}"
+    dest: >-
+      {{ personal_repos_destination }}/{{
+         item | basename | regex_replace('\.git$', '') }}
+    version: main
+    accept_hostkey: true
+    update: false
+  loop: "{{ personal_repos }}"
+  when: github_ssh_available | default(false)
