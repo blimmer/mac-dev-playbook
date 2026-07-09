@@ -23,55 +23,105 @@ dotfiles_files:
 
 homebrew_installed_packages:
   - ack
+  - actionlint
   - asdf
   - awscli
+  - bash
   - bat
+  - bats-core
+  - circleci
+  - contextbridge/tap/aether
   - coreutils
   - curl
+  - fd
   - ffmpeg
+  - findutils
+  - gemini-cli
+  - gh
   - git
+  - git-crypt
+  - git-lfs
+  - gitleaks
+  - gitui
   - go
   - gpg
   - hadolint
   - highlight
+  - hyperfine
+  - imagemagick
+  - jj
   - jq
+  - lefthook
+  - make
+  - mermaid-cli
+  - mkcert
+  - ocrmypdf
   - openssl
+  - pandoc
+  - pinact
+  - pipx
+  - pngcrush
+  - pre-commit
   - python3
+  - rclone
+  - readline
+  - rsync
+  - ruby-build
+  - s3cmd
+  - sccache
   - shellcheck
   - ssh-copy-id
-  - readline
-  - ruby-build
   - tfenv
   - the_silver_searcher
-  - tldr
+  - tlrc
   - tree
+  - typescript-language-server
+  - typos-cli
+  - uv
   - vim
   - wget
+  - yamllint
+  - yq
+  - zizmor
   - zsh
 
-homebrew_taps: []
+homebrew_taps:
+  - contextbridge/tap
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
-  - aws-vault
+  - 1password-cli
+  - antigravity-cli
+  - aws-vault-binary
+  - brave-browser
   - chatgpt
+  - claude
+  - codex
+  - contextbridge/tap/cli@alpha
   - cursor
-  - docker
+  - docker-desktop
   - firefox@beta
   - font-menlo-for-powerline
+  - gcloud-cli
+  - github
   - google-chrome
   - imageoptim
   - istat-menus
   - iterm2
   - keepingyouawake
+  - logi-options+
+  - loom
+  - netnewswire
   - obsidian
   - pastebot
   - rectangle
+  - session-manager-plugin
   - slack
   - spotify
-  - stretchly
-  - visual-studio-code
+  - tailscale-app
+  - warp
+  - zed
   - zoom
 
 asdf_plugins:
@@ -109,8 +159,8 @@ dockitems_persist:
   - name: Messages
     path: "/System/Applications/Messages.app"
     pos: 2
-  - name: Cursor
-    path: "/Applications/Cursor.app"
+  - name: Zed
+    path: "/Applications/Zed.app"
     pos: 3
   - name: Slack
     path: "/Applications/Slack.app"
@@ -118,9 +168,18 @@ dockitems_persist:
   - name: Spotify
     path: "/Applications/Spotify.app"
     pos: 5
+  - name: NetNewsWire
+    path: "/Applications/NetNewsWire.app"
+    pos: 6
+  - name: Claude
+    path: "/Applications/Claude.app"
+    pos: 7
   - name: ChatGPT
     path: "/Applications/ChatGPT.app"
-    pos: 6
+    pos: 8
+  - name: Warp
+    path: "/Applications/Warp.app"
+    pos: 9
   - name: iTerm
     path: "/Applications/iTerm.app"
-    pos: 7
+    pos: 10
