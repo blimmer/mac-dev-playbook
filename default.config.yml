@@ -9,6 +9,7 @@ configure_claude: false
 uv_tools: []
 configure_repos: false
 personal_repos: []
+macos_defaults: []
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false

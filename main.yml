@@ -12,6 +12,18 @@
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
 
+  handlers:
+    - name: Apply Caps Lock to Escape mapping
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/hidutil
+          - property
+          - --set
+          - >-
+            {"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,
+            "HIDKeyboardModifierMappingDst":0x700000029}]}
+      changed_when: true
+
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew

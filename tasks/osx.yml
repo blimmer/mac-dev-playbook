@@ -1,5 +1,55 @@
 ---
-# TODO: Use sudo once .osx can be run via root with no user interaction.
-- name: Run .osx dotfiles.
-  command: "{{ osx_script }}"
+- name: Ensure the screenshots directory exists.
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/screenshots"
+    state: directory
+    mode: "0755"
+
+- name: Set macOS defaults.
+  community.general.osx_defaults:
+    domain: "{{ item.domain }}"
+    host: "{{ item.host | default(omit) }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  loop: "{{ macos_defaults }}"
+  loop_control:
+    label: "{{ item.domain }} {{ item.key }}"
+
+- name: Show the ~/Library folder.
+  ansible.builtin.command: "chflags nohidden {{ ansible_env.HOME }}/Library"
+  changed_when: false
+
+# Remaps at every login via RunAtLoad; the handler covers this session.
+- name: Install the Caps Lock to Escape launch agent.
+  ansible.builtin.copy:
+    src: capslock-to-escape.plist
+    dest: ~/Library/LaunchAgents/com.blimmer.capslock-to-escape.plist
+    mode: "0644"
+  notify: Apply Caps Lock to Escape mapping
+
+# Best-effort, as in the original .osx script: the nested keys only exist
+# once Finder has written its view settings at least once.
+- name: Snap desktop and icon-view icons to a grid.
+  ansible.builtin.command: >-
+    /usr/libexec/PlistBuddy
+    -c "Set :{{ item }}:IconViewSettings:arrangeBy grid"
+    {{ ansible_env.HOME }}/Library/Preferences/com.apple.finder.plist
+  loop:
+    - DesktopViewSettings
+    - FK_StandardViewSettings
+    - StandardViewSettings
+  failed_when: false
+  changed_when: false
+
+- name: Set desktop and icon-view icon size.
+  ansible.builtin.command: >-
+    /usr/libexec/PlistBuddy
+    -c "Set :{{ item }}:IconViewSettings:iconSize 64"
+    {{ ansible_env.HOME }}/Library/Preferences/com.apple.finder.plist
+  loop:
+    - DesktopViewSettings
+    - FK_StandardViewSettings
+    - StandardViewSettings
+  failed_when: false
   changed_when: false
