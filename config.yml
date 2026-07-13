@@ -124,7 +124,7 @@ homebrew_cask_apps:
   - istat-menus
   - iterm2
   - keepingyouawake
-  - logi-options+
+  # - logi-options+
   - loom
   - netnewswire
   - obsidian
@@ -226,7 +226,7 @@ macos_defaults:
   - domain: com.apple.screencapture
     key: location
     type: string
-    value: "{{ ansible_env.HOME }}/screenshots"
+    value: "{{ ansible_facts.env.HOME }}/screenshots"
   - domain: com.apple.screencapture
     key: show-thumbnail
     type: bool
@@ -247,7 +247,7 @@ macos_defaults:
   - domain: com.apple.finder
     key: NewWindowTargetPath
     type: string
-    value: "file://{{ ansible_env.HOME }}/Desktop/"
+    value: "file://{{ ansible_facts.env.HOME }}/Desktop/"
   - domain: com.apple.finder
     key: ShowExternalHardDrivesOnDesktop
     type: bool
@@ -354,7 +354,6 @@ dockitems_remove:
   - Reminders
   - Maps
   - Photos
-  - Messages
   - FaceTime
   - Music
   - Podcasts

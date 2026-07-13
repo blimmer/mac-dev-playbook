@@ -2,6 +2,14 @@
 - name: Configure host.
   hosts: all
 
+  # --ask-become-pass does not define the ansible_become_password variable,
+  # which the homebrew role needs to pass to `brew` for pkg-based casks.
+  vars_prompt:
+    - name: ansible_become_password
+      prompt: macOS account password (for sudo)
+      private: true
+      default: ""
+
   vars_files:
     - default.config.yml
 

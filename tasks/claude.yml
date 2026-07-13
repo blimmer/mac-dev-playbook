@@ -24,5 +24,5 @@
 - name: Install uv-managed tools.
   ansible.builtin.command: "uv tool install {{ item }}"
   args:
-    creates: "{{ ansible_env.HOME }}/.local/bin/{{ item }}"
+    creates: "{{ ansible_facts.env.HOME }}/.local/bin/{{ item }}"
   loop: "{{ uv_tools }}"

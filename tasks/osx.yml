@@ -1,7 +1,7 @@
 ---
 - name: Ensure the screenshots directory exists.
   ansible.builtin.file:
-    path: "{{ ansible_env.HOME }}/screenshots"
+    path: "{{ ansible_facts.env.HOME }}/screenshots"
     state: directory
     mode: "0755"
 
@@ -17,7 +17,7 @@
     label: "{{ item.domain }} {{ item.key }}"
 
 - name: Show the ~/Library folder.
-  ansible.builtin.command: "chflags nohidden {{ ansible_env.HOME }}/Library"
+  ansible.builtin.command: "chflags nohidden {{ ansible_facts.env.HOME }}/Library"
   changed_when: false
 
 # Remaps at every login via RunAtLoad; the handler covers this session.
@@ -34,7 +34,7 @@
   ansible.builtin.command: >-
     /usr/libexec/PlistBuddy
     -c "Set :{{ item }}:IconViewSettings:arrangeBy grid"
-    {{ ansible_env.HOME }}/Library/Preferences/com.apple.finder.plist
+    {{ ansible_facts.env.HOME }}/Library/Preferences/com.apple.finder.plist
   loop:
     - DesktopViewSettings
     - FK_StandardViewSettings
@@ -46,7 +46,7 @@
   ansible.builtin.command: >-
     /usr/libexec/PlistBuddy
     -c "Set :{{ item }}:IconViewSettings:iconSize 64"
-    {{ ansible_env.HOME }}/Library/Preferences/com.apple.finder.plist
+    {{ ansible_facts.env.HOME }}/Library/Preferences/com.apple.finder.plist
   loop:
     - DesktopViewSettings
     - FK_StandardViewSettings

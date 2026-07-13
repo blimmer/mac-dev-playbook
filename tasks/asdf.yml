@@ -2,7 +2,7 @@
 - name: Install ASDF plugins
   command: "asdf plugin add {{ item }}"
   args:
-    creates: "{{ ansible_env.HOME }}/.asdf/plugins/{{ item }}"
+    creates: "{{ ansible_facts.env.HOME }}/.asdf/plugins/{{ item }}"
   loop: "{{ asdf_plugins }}"
   register: plugin_install
   changed_when: plugin_install.rc == 0
